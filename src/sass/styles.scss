@@ -1,0 +1,44 @@
+@mixin button($width, $height, $color, $background-color, $radius: 0, $border-width: 1px, $border-color:black, $border-style: solid){
+    width: $width;
+    height: $height;
+    color: $color;
+    background-color: $background-color;
+    border-radius: $radius;
+    border: $border-width $border-style $border-color;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.btn{
+    &_black{
+        transition: all 0.3s ease;
+        @include button(100px,25px,red,black,20px);
+        &:hover{
+            background-color: red;
+            color: black;
+            border-color: red;
+        }
+        &:active{
+            background-color: rgb(187, 0, 0);
+        }
+    }
+
+    &_red{
+        transition: all 0.3s ease;
+        @include button(100px,25px,black,red,20px,1px,red, solid);
+        &:hover{
+            background-color: black;
+            color: red;
+            border-color: black;
+        }
+        &:active{
+            background-color: rgb(27, 27, 27);
+            border-color: rgb(27, 27, 27);
+        }
+    }
+}
+

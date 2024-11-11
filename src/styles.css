@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.btn_black {
+  transition: all 0.3s ease;
+  width: 100px;
+  height: 25px;
+  color: red;
+  background-color: black;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+.btn_black:hover {
+  background-color: red;
+  color: black;
+  border-color: red;
+}
+.btn_black:active {
+  background-color: rgb(187, 0, 0);
+}
+.btn_red {
+  transition: all 0.3s ease;
+  width: 100px;
+  height: 25px;
+  color: black;
+  background-color: red;
+  border-radius: 20px;
+  border: 1px solid red;
+}
+.btn_red:hover {
+  background-color: black;
+  color: red;
+  border-color: black;
+}
+.btn_red:active {
+  background-color: rgb(27, 27, 27);
+  border-color: rgb(27, 27, 27);
+}
+
+/*# sourceMappingURL=styles.css.map */
