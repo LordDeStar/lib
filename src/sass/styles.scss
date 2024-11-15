@@ -46,14 +46,12 @@ body{
 }
 
 .tab{ 
-    display: flex;
     min-height: 300px;
     min-width: 300px;
     max-width: 300px;
     max-height: 300px;
-    background-color: rgb(31, 31, 31);
+    background-color: black;
     flex-direction: column;
-    border-radius: 20px;
     &_list{
         position: relative;
         display: flex;
@@ -139,5 +137,24 @@ body{
     100%{
         opacity: 1;
         left: auto;
+    }
+}
+
+.gradient-box{
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    $border: 5px;
+    border: solid $border transparent;
+    background-clip: padding-box;
+    border-radius: 20px;
+    &::before{
+        content: '';
+        position: absolute;
+        top:0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        margin: -$border;
+        border-radius: inherit;
+        background: linear-gradient(45deg, red, orange)
     }
 }

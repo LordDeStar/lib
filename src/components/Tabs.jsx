@@ -25,7 +25,7 @@ export const Tabs = ({ children }) => {
   }
 
   return (
-    <div className="tab">
+    <div className="tab gradient-box" >
       <div className="tab_list">
         {children.map((child, index) => (
           <h4

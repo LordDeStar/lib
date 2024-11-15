@@ -46,14 +46,12 @@ body {
 }
 
 .tab {
-  display: flex;
   min-height: 300px;
   min-width: 300px;
   max-width: 300px;
   max-height: 300px;
-  background-color: rgb(31, 31, 31);
+  background-color: black;
   flex-direction: column;
-  border-radius: 20px;
 }
 .tab_list {
   position: relative;
@@ -141,6 +139,26 @@ body {
     opacity: 1;
     left: auto;
   }
+}
+.gradient-box {
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  border: solid 5px transparent;
+  background-clip: padding-box;
+  border-radius: 20px;
+}
+.gradient-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -5px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, red, orange);
 }
 
 /*# sourceMappingURL=styles.css.map */
