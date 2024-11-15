@@ -77,6 +77,7 @@ body{
         justify-content: center;
         align-items: center;
         > *{
+            margin: 5px;
             position: absolute;
             top: -100%;
             background: transparent;
@@ -118,5 +119,25 @@ body{
     100%{
         opacity: 0;
         transform: translate(0, -100%);
+    }
+}
+.clicker{
+    > h1{
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translate(-100%, 0);
+    }
+}
+.changing{
+    animation: count 0.3s ease forwards;
+}
+@keyframes count {
+    0%{
+        opacity: 0;
+        transform: translate(100%, 0);
+    }
+    100%{
+        opacity: 1;
+        left: auto;
     }
 }
