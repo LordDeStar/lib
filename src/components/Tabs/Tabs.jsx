@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-
+import styles from './styles.module.scss';
 export const Tabs = ({ children }) => {
   const [activeTab, setActiveTab] = useState(children[0].props.label);
   const [changing, setChanging] = useState(false);
@@ -25,8 +25,8 @@ export const Tabs = ({ children }) => {
   }
 
   return (
-    <div className="tab gradient-box" >
-      <div className="tab_list">
+    <div className={styles.tab}>
+      <div className={styles.tab_list}>
         {children.map((child, index) => (
           <h4
             key={child.props.label}
@@ -38,14 +38,14 @@ export const Tabs = ({ children }) => {
           </h4>
         ))}
         <div
-          className="underline"
+          className={styles.underline}
           style={{ width: underlineWidth, left: underlineLeft - 10 }}
         />
       </div>
       <hr />
-      <div className="tab_content">
+      <div className={styles.tab_content}>
         {children.map((child) => (
-          child.props.label === activeTab && <div key={child.props.label} className={`animated ${changing ? 'disable' : ''}`}>{child.props.children}</div>
+          child.props.label === activeTab && <div key={child.props.label} className={`${styles.animated} ${changing ? styles.disabled : ''}`}>{child.props.children}</div>
         ))}
       </div>
     </div>

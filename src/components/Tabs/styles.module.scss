@@ -1,0 +1,48 @@
+@import '../../sass/global.scss';
+
+.tab{
+    @include gradient-box(5px, red, orange, 45deg);
+    min-width: 25vw;
+    flex-direction: column;
+    background-color: black;
+    transition: all 0.3s ease;
+    &_list{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        color: white;
+        > .underline{
+            position: absolute;
+            bottom: 0;
+            border: 2px solid red;
+            transition: left 0.5s ease-in-out;
+        }
+    }
+    &_content{
+        color: white;
+        
+        left: -100%;
+        transition: all 0.3s ease-in-out;
+        > * {
+            opacity: 0;
+            animation: active 0.3s ease-in-out forwards;
+        }
+        .disabled{
+            animation: disable 0.5s ease-in-out forwards;
+        }
+    }
+}
+
+@keyframes active {
+    to{
+        opacity: 1;
+        transform: translateX(10%);
+    }
+}
+@keyframes disable {
+    to{
+        opacity: 0;
+        left: -100%;
+    }
+}
